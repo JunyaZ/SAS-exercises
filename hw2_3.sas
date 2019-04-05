@@ -1,0 +1,16 @@
+data one;
+mu=65;
+sigma=8.6;
+do i=1 to 10000;
+	z=rannor(13755);
+	x=mu+(z*sigma);
+	output;
+end;
+run;
+proc chart;
+vbar z/type=pct;
+vbar x/type=pct;
+run;
+proc means;
+var z x;
+run;

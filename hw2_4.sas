@@ -1,0 +1,15 @@
+data one;
+do i=1 to 5000;
+	x=ranbin(21439,50,0.25);
+	output;
+end;
+run;
+proc means;
+var x;
+run;
+proc freq;
+tables x;
+run;
+proc chart;
+vbar x/type=pct;
+run;
